@@ -22,25 +22,35 @@
     body{
       font-size: var(--font-size)
     }
-    #test{
-      border:1px solid var(--border-color)
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+       margin-top: 1px;
     }
   </style>
   <style>
-    
+
   </style>
 </head>
 <body>
   <div id="app">
-    <g-button></g-button>
-  {{message}}
-
-  <button id="test">提交</button>
+    <g-button icon="settings" icon-position="right">
+      右侧
+    </g-button>
+    <g-button icon="settings" icon-position="left">
+      左侧
+    </g-button>
+    <g-button>
+      没有
+    </g-button>
   </div>
   
   
   <!-- <script src="./node_modules/vue/dist/vue.js"></script>
   <script src="./button.js"></script> -->
   <script src="./src/app.js"></script>
+  <script src="//at.alicdn.com/t/font_2042259_jkafx32owdq.js"></script>
 </body>
 </html>
