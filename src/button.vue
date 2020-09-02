@@ -2,9 +2,9 @@
   <button class="g-button">按钮</button>
 </template>
 <script>
-export default {
-  
-}
+  export default {
+
+  }
 </script>
 <style scoped lang="scss">
   .g-button {
@@ -24,5 +24,5 @@ export default {
       outline: none
     }
   }
-
+  
 </style>
