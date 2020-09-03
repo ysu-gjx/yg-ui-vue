@@ -1,9 +1,10 @@
 <template>
-  <button class="g-button" :class="`icon-${iconPosition}`">
+  <button class="yg-button" :class="`icon-${iconPosition}`" @click="$emit('click')">
     <!-- <svg class="icon" v-if="icon">
       <use :xlink:href="`#yg-${icon}`"></use>
     </svg> -->
-    <g-icon v-if="icon" :icon="icon" :class="{'loading': icon === 'loading'}"></g-icon>
+    <g-icon v-if="icon && !loading" :icon="icon"></g-icon>
+    <g-icon v-if="loading" class="loading yg-icon" icon="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -14,6 +15,10 @@
     // props: ['icon', 'iconPosition']
     props: {
       icon: String,
+      loading: {
+        type: Boolean,
+        default: false
+      },
       iconPosition: {
         type: String,
         default: 'left',
@@ -29,7 +34,7 @@
     0%{transform: rotate(0deg)}
     100%{transform: rotate(360deg)}
   }
-  .g-button {
+  .yg-button {
     font-size: var(--font-size);
     height: var(--button-height);
     padding: 0 1em;

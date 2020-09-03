@@ -30,7 +30,7 @@
 </head>
 <body>
   <div id="app">
-    <g-button icon="settings" icon-position="right">
+    <g-button icon="settings" icon-position="right" :loading="loading" @click="clickBtn">
       右侧
     </g-button>
     <g-button icon="settings" icon-position="left">
@@ -39,16 +39,20 @@
     <g-button>
       没有
     </g-button>
-    <g-button icon="loading" icon-position="left">
+    <g-button icon="loading" icon-position="left" :loading="true">
       加载
     </g-button>
-    <g-icon icon="loading"></g-icon>
+    <g-button-group>
+      <g-button icon="left">上一页</g-button>
+      <g-button>更多</g-button>
+      <g-button icon="right" icon-position="right">下一页</g-button>
+    </g-button-group>
   </div>
   
   
   <!-- <script src="./node_modules/vue/dist/vue.js"></script>
   <script src="./button.js"></script> -->
   <script src="./src/app.js"></script>
-  <script src="//at.alicdn.com/t/font_2042259_2n9mwdbt90j.js"></script>
+  <script src="//at.alicdn.com/t/font_2042259_9r5qi44mzp5.js"></script>
 </body>
 </html>
