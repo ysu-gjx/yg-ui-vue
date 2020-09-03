@@ -27,6 +27,8 @@ console.log(el)
 
 // 单元测试
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 const expect = chai.expect
 
 {
@@ -107,10 +109,16 @@ const expect = chai.expect
     }
   })
   vm.$mount()
-  vm.$on('click', function () {
-    expect(1).to.eq(1)
-  })
 
+  const spy = chai.spy(() => {})
+
+
+  vm.$on('click', spy)
+
+  // 希望这个函数被执行
   const btn = vm.$el
   btn.click()
+  expect(spy).to.have.been.called()
+
+  vm.$destroy()
 }
