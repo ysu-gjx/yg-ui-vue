@@ -112,7 +112,6 @@ const expect = chai.expect
 
   const spy = chai.spy(() => {})
 
-
   vm.$on('click', spy)
 
   // 希望这个函数被执行
