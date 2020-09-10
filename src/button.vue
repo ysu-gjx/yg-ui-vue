@@ -1,8 +1,5 @@
 <template>
   <button class="yg-button" :class="`icon-${iconPosition}`" @click="$emit('click')">
-    <!-- <svg class="icon" v-if="icon">
-      <use :xlink:href="`#yg-${icon}`"></use>
-    </svg> -->
     <g-icon v-if="icon && !loading" :icon="icon"></g-icon>
     <g-icon v-if="loading" class="loading yg-icon" icon="loading"></g-icon>
     <div class="content">
@@ -11,6 +8,7 @@
   </button>
 </template>
 <script>
+  import GIcon from './icon'
   export default {
     // props: ['icon', 'iconPosition']
     props: {
@@ -26,6 +24,9 @@
           return value === 'left' || value === 'right'
         }
       }
+    },
+    components: {
+      GIcon
     }
   }
 </script>
